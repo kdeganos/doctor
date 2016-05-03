@@ -1,0 +1,23 @@
+<h4>Name: $thisPatient.getName()</h4>
+<h4>Birthday: $thisPatient.getBirthday()</h4>
+#if ($thisPatient.getDoctorId() != 0)
+<h4>Doctor: <a href="/doctorInfo/$thisDoctor.getId()">$thisDoctor.getName()</a></h4>
+
+#else
+<form action="/updatePatient/$thisPatient.getId()" method="post">
+  <div class="form-group">
+    <label for="doctorToPatient">Assign A Doctor To This Patient:</label>
+    <select id="doctorToPatient" name="doctorToPatient">
+      #foreach($doctor in $doctorList)
+      <option value=$doctor.getId() id="$doctor.getId()">$doctor.getName()</option>
+      #end
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+#end
+
+<a href="/addDoctor">Add A New Doctor</a>
+<a href="/addPatient">Add A New Patient</a>
+<a href="/listDoctors">View Doctors</a>
+<a href="/listPatients">View Patients</a>

@@ -1,0 +1,23 @@
+<h2>Add A New Patient:</h2>
+
+<form action="/addPatient" method="post">
+  <div class="form-group">
+    <label for="patientName">Patient Name</label>
+    <input type="text" name="patientName" id="patientName" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="patientBirthday">Date of Birth</label>
+    <input type="text" name="patientBirthday" id="patientBirthday" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+#if ($addedNewPatient)
+
+<h3>New Patient Added Successfully</h3>
+
+#end
+
+<a href="/">Return</a>
+<a href="/listDoctors">View Doctors</a>
+<a href="/listPatients">View Patients</a>

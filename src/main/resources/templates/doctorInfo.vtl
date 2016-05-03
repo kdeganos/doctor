@@ -1,0 +1,14 @@
+<h2>$thisDoctor.getName()</h2>
+#if ($thisDoctor.getSpeciality())
+<h4>Speciality: $thisDoctor.getSpeciality()</h4>
+#end
+<ul>
+#foreach ($patient in $allMyPatients)
+  <li><a href="/patientInfo/$patient.getId()">$patient.getName()</a></li>
+#end
+</ul>
+
+<a href="/addDoctor">Add A New Doctor</a>
+<a href="/addPatient">Add A New Patient</a>
+<a href="/listDoctors">View Doctors</a>
+<a href="/listPatients">View Patients</a>

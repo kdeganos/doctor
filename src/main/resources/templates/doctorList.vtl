@@ -1,0 +1,11 @@
+<h2>Doctor List</h2>
+
+<ul>
+
+#foreach ($doctor in $doctorList)
+
+<a href="/doctorInfo/$doctor.getId()"><li>$doctor.getName()</li></a>
+
+#end
+
+</ul>
